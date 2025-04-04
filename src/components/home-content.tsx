@@ -483,7 +483,7 @@ export function HomeContent() {
             </p>
           </div>
           <div className="max-w-3xl mx-auto">
-            <div className="divide-y border-t border-b border-gray-200">
+            <div className="divide-y border-t border-b border-primary/20">
               {faqs.map((faq, index) => (
                 <div key={index} className="py-5">
                   <button 
@@ -492,19 +492,19 @@ export function HomeContent() {
                     aria-expanded={openFaqIndex === index}
                   >
                     <div className="flex items-center gap-4">
-                      <span className="text-xl font-bold text-[#9bca3b] w-[40px]">
+                      <span className="text-xl font-bold text-primary w-[40px]">
                         {String(index + 1).padStart(2, '0')}
                       </span>
-                      <h3 className="text-xl font-semibold group-hover:text-[#9bca3b] transition-colors">
+                      <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                         {faq.question}
                       </h3>
                     </div>
-                    <span className="text-2xl font-bold text-[#9bca3b] ml-4 flex-shrink-0 transition-transform">
+                    <span className="text-2xl font-bold text-primary ml-4 flex-shrink-0 transition-transform">
                       {openFaqIndex === index ? "−" : "+"}
                     </span>
                   </button>
                   {openFaqIndex === index && (
-                    <div className="mt-4 ml-[40px] pl-4 text-gray-600 border-l border-gray-200">
+                    <div className="mt-4 ml-[40px] pl-4 text-gray-600 border-l border-primary/30">
                       <p className="py-2">{faq.answer}</p>
                     </div>
                   )}
