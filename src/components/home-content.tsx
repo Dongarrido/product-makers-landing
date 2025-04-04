@@ -415,12 +415,24 @@ export function HomeContent() {
                   </span>
                 )}
                 <h3 className="text-2xl font-semibold mb-2">{plan.name}</h3>
-                <div className="flex items-baseline mb-6">
+                <div className="flex items-baseline mb-4">
                   <span className="text-5xl font-bold">${plan.price}</span>
                   <span className={`ml-2 ${index === 1 ? 'text-white/80' : 'text-gray-600'}`}>/month</span>
                 </div>
-                <p className={`mb-8 ${index === 1 ? 'text-white/80' : 'text-gray-600'}`}>{plan.description}</p>
-                <ul className="space-y-4 mb-8">
+                
+                <Button
+                  variant={index === 1 ? 'default' : 'outline'}
+                  className={`w-full ${index === 1 ? 'bg-white text-primary hover:bg-white/90' : ''}`}
+                >
+                  Get Started
+                </Button>
+                
+                <div className={`my-6 h-px ${index === 1 ? 'bg-white/20' : 'bg-gray-200'}`}></div>
+                
+                <p className={`mb-4 ${index === 1 ? 'text-white/80' : 'text-gray-600'}`}>{plan.description}</p>
+                
+                <h4 className={`text-lg font-medium mb-4 ${index === 1 ? 'text-white' : 'text-gray-900'}`}>Features</h4>
+                <ul className="space-y-4 mb-4">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <span className={`text-lg ${index === 1 ? 'text-green-300' : 'text-green-500'}`}>✓</span>
@@ -428,12 +440,6 @@ export function HomeContent() {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  variant={index === 1 ? 'default' : 'outline'}
-                  className={`w-full ${index === 1 ? 'bg-white text-primary hover:bg-white/90' : ''}`}
-                >
-                  Get Started
-                </Button>
               </div>
             ))}
           </div>
